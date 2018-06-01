@@ -19,8 +19,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'spree_core', ['>= 2.4.0', '< 3.4.0']
   s.add_dependency 'json'
   s.add_dependency 'addressable', '~> 2.3'
-  s.add_dependency 'rest-client', '~> 1.7'
-  s.add_dependency 'logging', '~> 1.8'
+  s.add_dependency 'rest-client'
+  s.add_dependency 'logging'
 
   #add gems here for files
   s.add_development_dependency 'dotenv'
