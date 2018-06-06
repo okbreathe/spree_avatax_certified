@@ -40,6 +40,7 @@ class TaxSvc
       http.read_timeout = 1
 
       res = http.get(uri.request_uri, 'Authorization' => credential, 'Content-Type' => 'application/json')
+
       JSON.parse(res.body)
     end
   rescue => e
