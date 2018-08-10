@@ -23,7 +23,11 @@ module Spree
         if ping_result['ResultCode'] == 'Success'
           flash[:success] = 'Ping Successful'
         else
-          flash[:error] = 'Ping Error'
+          begin
+            flash[:error] = ping_result['Messages'].map{|m| m['Summary']}.to_sentence
+          rescue
+            flash[:error] = 'Could not connect to Endpoint'
+          end
         end
 
         respond_to do |format|
